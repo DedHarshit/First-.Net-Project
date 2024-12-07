@@ -1,0 +1,33 @@
+﻿@model Student
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text text-light">Edit Student</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="StudentName" class="p-0"></label>
+            <input asp-for="StudentName" class="form-control"></input>
+            <span asp-validation-for="StudentName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="StudentClass" class="p-0"></label>
+            <input asp-for="StudentClass" class="form-control"></input>
+            <span asp-validation-for="StudentClass" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Create</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Student" asp-action="Index" class="btn btn-secondary border form-control">Back To List</a>
+            </div>
+
+        </div>
+    </div>
+    @section scripts {
+        @{
+            <partial name="_ValidationScriptsPartial"></partial>
+        }
+    }
+</form>
